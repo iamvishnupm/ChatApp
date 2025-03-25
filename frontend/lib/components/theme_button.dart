@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:frontend/controllers/theme_controller.dart';
+import "package:flutter/material.dart";
+import "package:provider/provider.dart";
+import "package:frontend/controllers/theme_controller.dart";
 
 class ThemeButton extends StatelessWidget {
   const ThemeButton({super.key});

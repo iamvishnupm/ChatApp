@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:frontend/data/themes.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import "package:flutter/material.dart";
+import "package:frontend/data/themes.dart";
+import "package:shared_preferences/shared_preferences.dart";
 
 class ThemeControl extends ChangeNotifier {
   bool _isDarkMode = true;
-  bool get isDarkMode => _isDarkMode;
-
   ThemeData _themeData = darkMode;
+
+  bool get isDarkMode => _isDarkMode;
   ThemeData get themeData => _themeData;
 
   ThemeControl() {
@@ -14,13 +14,13 @@ class ThemeControl extends ChangeNotifier {
   }
 
   Future<void> _init() async {
-    await _loadTheme();
+    await _loadThemeData();
   }
 
-  Future<void> _loadTheme() async {
+  Future<void> _loadThemeData() async {
     final prefs = await SharedPreferences.getInstance();
 
-    _isDarkMode = prefs.getBool('isDarkMode') ?? true;
+    _isDarkMode = prefs.getBool("isDarkMode") ?? true;
     _themeData = _isDarkMode ? darkMode : lightMode;
 
     notifyListeners();
@@ -28,7 +28,7 @@ class ThemeControl extends ChangeNotifier {
 
   Future<void> _saveTheme() async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('isDarkMode', _isDarkMode);
+    await prefs.setBool("isDarkMode", _isDarkMode);
   }
 
   void toggleTheme() {

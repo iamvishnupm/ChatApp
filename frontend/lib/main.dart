@@ -1,7 +1,10 @@
 import "package:flutter/material.dart";
 import "package:frontend/controllers/theme_controller.dart";
+import "package:frontend/pages/home.dart";
+import "package:frontend/pages/login.dart";
+import "package:frontend/pages/login_or_register.dart";
+import "package:frontend/pages/register.dart";
 import "package:provider/provider.dart";
-import "package:frontend/pages/login_page.dart";
 
 void main() {
   runApp(MyApp());
@@ -22,8 +25,8 @@ class MyApp extends StatelessWidget {
             theme: themeControl.themeData,
             initialRoute: '/',
             routes: {
-              '/': (context) => LoginPage(),
-              //
+              '/': (context) => LoginOrRegister(),
+              '/home': (context) => Home(),
               //
             },
           );

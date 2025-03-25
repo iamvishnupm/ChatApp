@@ -12,8 +12,8 @@ ThemeData lightMode = ThemeData(
 );
 
 ThemeData darkMode = ThemeData(
-  brightness: Brightness.light,
-  colorScheme: ColorScheme.light(
+  brightness: Brightness.dark,
+  colorScheme: ColorScheme.dark(
     surface: Colors.grey.shade900,
     primary: Colors.grey.shade500,
     secondary: Colors.grey.shade700,
