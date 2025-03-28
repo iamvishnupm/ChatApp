@@ -1,9 +1,7 @@
 import "package:flutter/material.dart";
 import "package:frontend/controllers/theme_controller.dart";
 import "package:frontend/pages/home.dart";
-import "package:frontend/pages/login.dart";
 import "package:frontend/pages/login_or_register.dart";
-import "package:frontend/pages/register.dart";
 import "package:provider/provider.dart";
 
 void main() {
@@ -26,7 +24,7 @@ class MyApp extends StatelessWidget {
             initialRoute: '/',
             routes: {
               '/': (context) => LoginOrRegister(),
-              '/home': (context) => Home(),
+              '/home': (context) => ChatAppHome(),
               //
             },
           );

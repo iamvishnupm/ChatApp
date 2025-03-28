@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
-import "package:http/http.dart" as http;
+
 import "dart:convert";
+import "package:http/http.dart" as http;
+import "package:shared_preferences/shared_preferences.dart";
 
 import "package:frontend/config.dart";
 import "package:frontend/components/button0.dart";
@@ -31,6 +33,12 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     if (response.statusCode == 200) {
+      final responseData = jsonDecode(response.body);
+      final token = responseData['access_token'];
+
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString("token", token);
+
       Navigator.pushReplacementNamed(context, '/home');
     } else {
       ScaffoldMessenger.of(

@@ -6,13 +6,17 @@ init.setup_project_root()
 
 
 from config.db import Base, engine
-from fastapi import FastAPI 
-from routes.auth import user
+from fastapi import FastAPI
+from models import users, contacts
+from routes.auth import users
+from routes.relations import contacts
 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
-app.include_router(user.router)
+
+app.include_router(users.router)
+app.include_router(contacts.router)
 
 @app.get('/')
 def root():
