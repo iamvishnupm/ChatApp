@@ -38,6 +38,7 @@ class _LoginPageState extends State<LoginPage> {
 
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString("token", token);
+      await prefs.setString("user", unameInputController.text);
 
       Navigator.pushReplacementNamed(context, '/home');
     } else {

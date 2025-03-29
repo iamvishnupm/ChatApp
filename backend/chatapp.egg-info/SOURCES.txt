@@ -8,6 +8,7 @@ config/db.py
 config/settings.py
 models/__init__.py
 models/contacts.py
+models/messages.py
 models/users.py
 routes/__init__.py
 routes/auth/__init__.py
@@ -16,6 +17,7 @@ routes/relations/__init__.py
 routes/relations/contacts.py
 schemas/__init__.py
 schemas/contacts.py
+schemas/messages.py
 schemas/users.py
 users/__init__.py
 users/functions.py
